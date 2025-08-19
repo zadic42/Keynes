@@ -10,15 +10,15 @@ const Footer = () => {
   ];
 
   const services = [
-    { name: 'Authority Approvals', href: '/services' },
-    { name: 'Construction', href: '/services' },
-    { name: 'Property Management', href: '/services' },
-    { name: 'Business Support Services', href: '/services' },
-    { name: 'General Maintenance', href: '/services' },
-    { name: 'IT and Security Solutions', href: '/services' },
-    { name: 'Pest Control Services', href: '/services' },
-    { name: 'Additional Services', href: '/services' },
-    { name: 'Interior Design', href: '/services' },
+    { name: 'Authority Approvals', href: '/services' , isRoute: true },
+    { name: 'Construction', href: '/services', isRoute: true },
+    { name: 'Property Management', href: '/services', isRoute: true },
+    { name: 'Business Support Services', href: '/services', isRoute: true },
+    { name: 'General Maintenance', href: '/services', isRoute: true },
+    { name: 'IT and Security Solutions', href: '/services', isRoute: true },
+    { name: 'Pest Control Services', href: '/services', isRoute: true },
+    { name: 'Additional Services', href: '/services', isRoute: true },
+    { name: 'Interior Design', href: '/services', isRoute: true },
   ];
 
   const socialLinks = [
@@ -112,8 +112,6 @@ const Footer = () => {
             <div className="text-gray-400 text-sm">
               © {currentYear} Keynes Group UAE. All rights reserved.
             </div>
-
-            {/* Social Links */}
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Award, Users, Target, Zap, ArrowRight } from 'lucide-react';
 
 // Type definitions
@@ -429,25 +430,31 @@ const CompanyDescription: React.FC<{ isVisible: boolean }> = ({ isVisible }) => 
     </p>
 
     {/* CTA Buttons */}
-    <div className={`flex flex-col sm:flex-row gap-4 pt-4 transform transition-all duration-700 delay-1000 ${
-      isVisible ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
-    }`}>
-      <a
-        href="/about"
+    <div
+      className={`flex flex-col sm:flex-row gap-4 pt-4 transform transition-all duration-700 delay-1000 ${
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+      }`}
+    >
+      {/* About Link */}
+      <Link
+        to="/about"
         className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl relative overflow-hidden group"
+        data-isroute="true"
       >
         <span className="relative z-10 flex items-center justify-center">
           Learn More About Us
           <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
         </span>
-      </a>
+      </Link>
 
-      <a
-        href="/services"
+      {/* Services Link */}
+      <Link
+        to="/services"
         className="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
+        data-isroute="true"
       >
         Our Services
-      </a>
+      </Link>
     </div>
   </div>
 );
