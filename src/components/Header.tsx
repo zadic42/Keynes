@@ -23,7 +23,7 @@ const Header = () => {
     { name: 'Home', href: '/', isRoute: true },
     { name: 'About', href: '/about', isRoute: true },
     { name: 'Services', href: '/services', isRoute: true },
-    { name: 'Contact', href: '/contactus', isRoute: false },
+    { name: 'Contact', href: '/contactus', isRoute: true },
   ];
 
   const handleNavClick = (item: any) => {
