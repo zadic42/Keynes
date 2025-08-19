@@ -1,16 +1,17 @@
 import { MapPin, Phone, Mail, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: 'About Us', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'About Us', href: '/about', isRoute: true },
+    { name: 'Services', href: '/services', isRoute: false },
+    { name: 'Contact', href: '/contact', isRoute: false }
   ];
 
   const services = [
-    { name: 'Authority Approvals', href: '/services' , isRoute: true },
+    { name: 'Authority Approvals', href: '/services', isRoute: true },
     { name: 'Construction', href: '/services', isRoute: true },
     { name: 'Property Management', href: '/services', isRoute: true },
     { name: 'Business Support Services', href: '/services', isRoute: true },
@@ -29,7 +30,6 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 font-poppins text-white">
-      {/* Main footer content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -55,6 +55,7 @@ const Footer = () => {
                 <span className="text-gray-300">info@keynesgroupuae.com</span>
               </div>
             </div>
+
             <div className="flex pt-4 space-x-6">
               {socialLinks.map((social, index) => (
                 <a
@@ -75,12 +76,22 @@ const Footer = () => {
             <ul className="space-y-4">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
-                  >
-                    {link.name}
-                  </a>
+                  {link.isRoute ? (
+                    <Link
+                      to={link.href}
+                      className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
+                      data-isroute="true"
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
+                    >
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -92,12 +103,22 @@ const Footer = () => {
             <ul className="space-y-4">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a
-                    href={service.href}
-                    className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
-                  >
-                    {service.name}
-                  </a>
+                  {service.isRoute ? (
+                    <Link
+                      to={service.href}
+                      className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
+                      data-isroute="true"
+                    >
+                      {service.name}
+                    </Link>
+                  ) : (
+                    <a
+                      href={service.href}
+                      className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
+                    >
+                      {service.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -105,7 +126,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom footer */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
