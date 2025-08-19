@@ -6,8 +6,8 @@ const Footer = () => {
 
   const quickLinks = [
     { name: 'About Us', href: '/about', isRoute: true },
-    { name: 'Services', href: '/services', isRoute: false },
-    { name: 'Contact', href: '/contact', isRoute: false }
+    { name: 'Services', href: '/services', isRoute: true },
+    { name: 'Contact', href: '/contact', isRoute: true }
   ];
 
   const services = [
